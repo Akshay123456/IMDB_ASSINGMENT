@@ -20,12 +20,12 @@ public class IMDBDATA {
 	public void beforeClass(String browser) {
 		if(browser.equalsIgnoreCase("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver","/Learn/IMDB/Drivers/geckodriver-v0.11.1-win64/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver","/Drivers/geckodriver-v0.11.1-win64/geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		else if(browser.equalsIgnoreCase("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver","/Learn/IMDB/Drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","/Drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 	}
@@ -33,7 +33,7 @@ public class IMDBDATA {
 	public void IMDB_DATA() throws ClassNotFoundException, InterruptedException, SQLException {
 		Class.forName("org.sqlite.JDBC");
 		Connection connection = null;
-		connection = DriverManager.getConnection("jdbc:sqlite:/Learn/IMDB/Database/ImdbData.db");
+		connection = DriverManager.getConnection("jdbc:sqlite:/Database/ImdbData.db");
 		Statement statement = connection.createStatement();
 		try
 		{
